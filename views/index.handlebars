@@ -1,0 +1,84 @@
+<div class="main-section d-flex justify-content-center mt-5">
+  <div class="body shadow-lg rounded-lg position-relative" style="width: 1200px; min-height: 600px;">
+
+    <div class="dropdown position-absolute" style="top: 30px; left: 20px;">
+      <button class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        選擇類別
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">午餐</a>
+        
+      </div>
+    </div>
+    <div class="balance d-flex align-items-center justify-content-around" style="height: 200px;">
+      <div class="total-amount d-flex align-items-end">
+        <h3 class="total mb-4">總財產：</h3>
+        <h1 class="display-2">100000</h1>
+      </div>
+
+    </div>
+    <div class="wrapper col-8 m-auto">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item m-3 d-flex" style="height: 100px;">
+          <a href="#" class="text-dark d-flex justify-content-between col-10" style="text-decoration: none;">
+
+            <div class="list-left d-flex align-items-center">
+              <div class="icon mr-4">
+                <i class="fas fa-home h2"></i></div>
+              <div class="category">
+                <h1 class="item">lunch</h1>
+                <span class="date">20/05/18</span>
+              </div>
+            </div>
+
+            <div class="list-right d-flex align-items-center">
+              <div class="cost">
+                <span class="icon"></span>
+                <h3 class="total-cost">100</h3>
+              </div>
+            </div>
+          </a>
+          <div class="button d-flex flex-column align-items-center justify-content-around ml-5">
+            <a href="/edit" class="edit text-success">
+              <svg class="bi bi-pen" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M5.707 13.707a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391L10.086 2.5a2 2 0 012.828 0l.586.586a2 2 0 010 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 011.414 0l.586.586a1 1 0 010 1.414L5 13l-3 1 1-3z"
+                  clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M9.854 2.56a.5.5 0 00-.708 0L5.854 5.855a.5.5 0 01-.708-.708L8.44 1.854a1.5 1.5 0 012.122 0l.293.292a.5.5 0 01-.707.708l-.293-.293z"
+                  clip-rule="evenodd" />
+                <path d="M13.293 1.207a1 1 0 011.414 0l.03.03a1 1 0 01.03 1.383L13.5 4 12 2.5l1.293-1.293z" />
+              </svg>
+            </a>
+            <form action="delete" method="post">
+              <button type="submit" class="delete border-0 text-danger" style="outline: none; cursor: pointer;">
+                <svg class="bi bi-x-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z"
+                    clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+                    clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+        </li>
+
+      </ul>
+    </div>
+    <div class="button d-flex justify-content-center mt-5">
+      <a href="#" class="btn btn-warning p-2">
+        <h2>新增支出</h2>
+
+      </a>
+    </div>
+  </div>
+</div>

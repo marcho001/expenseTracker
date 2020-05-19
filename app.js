@@ -8,7 +8,7 @@ app.set('view engine', 'handlebars')
 
 
 app.get('/', (req, res) => {
-  res.send('hi')
+  res.render('index')
 })
 
 app.listen( 3000 , () => {
