@@ -10,7 +10,8 @@
         </button>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          {{#each category}}
+          <a class="dropdown-item" href="/">全部</a>
+          {{#each categoryList}}
           <a class="dropdown-item" href="/category/{{this}}">{{this}}</a>
           {{/each}}
         </div>
@@ -29,7 +30,7 @@
       </div>
       <div class="wrapper col-8 m-auto">
         <ul class="list-group list-group-flush">
-          {{#each spend}}
+          {{#each cost}}
           <li class="list-group-item d-flex" style="min-width: 500px;">
             <a href="#" class="text-dark d-flex justify-content-between col-10 " style="text-decoration: none;">
 
