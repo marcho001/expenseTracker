@@ -18,7 +18,8 @@
       </div>
       <div class="balance d-flex flex-column align-items-center justify-content-around" style="height: 200px;">
         <div class="total-amount d-flex align-items-end">
-          <h3 class="total mb-4">總花費：</h3>
+          <h3 class="total mb-4">{{#if total}}總花費：{{/if}}{{#if categoryAmount}}類別花費：{{/if}}
+          </h3>
           <h1 class="display-2 font-weight-bold">{{ totalCost }}</h1>
         </div>
         {{#if total}}
