@@ -1,23 +1,23 @@
 <div class="main-section d-flex justify-content-center m-5">
   <div class="main-body d-flex justify-content-center">
-  <div class="form-body shadow mt-5 p-5 d-flex justify-content-center align-items-center" style=" width: 900px; ">
+  <div class="form-body shadow p-5 d-flex justify-content-center align-items-center" style="width: 1000px ">
     <form action="/records/{{edit._id}}{{#if edit}}/edit{{/if}}{{#if create}}create{{/if}}" method="post" class="d-flex flex-column justify-content-around">
       <div class="amount d-flex justify-content-between mb-5">
-        <span class="mr-3 text-danger">* 請輸入花費 :</span>
+        <p class="mr-3 text-danger h3 align-self-center">* 請輸入花費 :</p>
         <input type="text" name="amount" class="rounded"  style="width: 300px; height: 60px;  outline: none;" value="{{edit.amount}}">
       </div>
       <div class="expense-title d-flex justify-content-between mb-5">
-        <span class="mr-3 text-danger">* 名稱 :</span>
+        <p class="mr-3 text-danger h3 align-self-center">* 名稱 :</p>
         <input type="text" name="title" class="title rounded" value="{{edit.title}}"
           style="width: 300px; height: 60px;  outline: none;">
       </div>
       <div class="date d-flex justify-content-between mb-5">
-        <span class="mr-3">日期 :</span>
+        <p class="mr-3 h3 align-self-center">日期 :</p>
         <input type="date" name="date" placeholder="2020-05-20" class="align-self-stretch" value="{{edit.date}}"
           style="width: 300px; height: 60px; outline: none;">
       </div>
       <div class="category d-flex justify-content-between mb-5">
-        <span class="mr-3">類別 :</span>
+        <p class="mr-3 h3 align-self-center">類別 :</p>
 
         <select name="category" class="custom-select rounded" style="width: 300px; height: 60px;" placeholder="請選擇類別" value="{{edit.category}}">
           <option value="家居物業">家居物業</option>
@@ -28,7 +28,7 @@
         </select>
       </div>
       <div class="account d-flex justify-content-between mb-5">
-        <span class="mr-3">帳戶 :</span>
+        <p class="mr-3 h3 align-self-center">帳戶 :</p>
         <select name="account" class="custom-select rounded" style="width: 300px; height: 60px;" value="{{edit.account}}">
           <option value="現金">現金</option>
           <option value="第一銀行">第一銀行</option>
