@@ -12,6 +12,25 @@ router.get('/', (req, res) => {
       total = record.filter(i => i.totalAmount)[0].totalAmount
       const spend = record.filter(i => !i.totalAmount)
       record.forEach((i) => {
+
+        switch(i.category){
+          case "家居物業":
+            i.icon = '<i class="fas fa-home h1"></i>'
+            break;
+          case "交通出行":
+            i.icon = '<i class="fas fa-shuttle-van h1"></i> '
+            break;
+          case "休閒娛樂":
+            i.icon = '<i class="fas fa-grin-beam h1"></i>' 
+            break;
+          case "餐飲食品":
+            i.icon = '<i class="fas fa-utensils h1"></i>'
+            break;
+          case "其他":
+            i.icon = '<i class="fas fa-pen h1"></i>'
+            break;
+        }
+
         if (i.amount !== undefined) {
           totalCost += i.amount
         }
@@ -30,6 +49,25 @@ router.get('/category/:item', (req, res) => {
     .then((record) => {
       let categoryAmount = 0
       record.forEach((i) => {
+
+        switch (i.category) {
+          case "家居物業":
+            i.icon = '<i class="fas fa-home h1"></i>'
+            break;
+          case "交通出行":
+            i.icon = '<i class="fas fa-shuttle-van h1"></i> '
+            break;
+          case "休閒娛樂":
+            i.icon = '<i class="fas fa-grin-beam h1"></i>'
+            break;
+          case "餐飲食品":
+            i.icon = '<i class="fas fa-utensils h1"></i>'
+            break;
+          case "其他":
+            i.icon = '<i class="fas fa-pen h1"></i>'
+            break;
+        }
+        
         if (i.amount !== undefined) {
           categoryAmount += i.amount
         }
