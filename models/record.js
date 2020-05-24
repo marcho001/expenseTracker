@@ -5,7 +5,7 @@ const Record = new Schema({
     type: Number,
     require: true,
   },
-  title : {
+  name : {
     type: String,
     require: true
   },
@@ -22,7 +22,6 @@ const Record = new Schema({
   totalAmount : {
     type : Number
   }
-
 })  
 
 module.exports = mongoose.model('Record', Record)
