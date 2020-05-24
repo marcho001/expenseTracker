@@ -1,13 +1,6 @@
-const mongoose = require('mongoose')
-const db = mongoose.connection
 const Record = require('../record')
 const seed = require('./seeder.json')
-
-mongoose.connect('mongodb://localhost/expenseTracker')
-
-db.on('error', () => {
-  console.log('error')
-})
+require('../../config/mongoose')
 
 db.once('open', () => {
   seed.forEach((record) => {
