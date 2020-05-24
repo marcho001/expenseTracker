@@ -1,7 +1,7 @@
 <div class="main-section d-flex justify-content-center m-5">
   <div class="main-body d-flex justify-content-center">
     <div class="form-body shadow p-5 d-flex justify-content-center align-items-center" style="width: 1000px ">
-      <form action="/records/{{edit._id}}{{#if edit}}/edit{{/if}}{{#if create}}create{{/if}}" method="post"
+      <form action="/records/{{edit._id}}{{#if edit}}?_method=PUT{{/if}}{{#if create}}create{{/if}}" method="post"
         class="d-flex flex-column justify-content-around">
         <div class="amount d-flex justify-content-between mb-5">
           <p class="mr-3 text-danger h3 align-self-center">* 請輸入花費 :</p>

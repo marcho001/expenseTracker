@@ -4,6 +4,7 @@ const routes = require('./routes/index')
 const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 mongoose.connect("mongodb://localhost/expenseTracker", { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
@@ -20,8 +21,10 @@ app.engine('handlebars', exphbs({ defaultLayout : 'main' }))
 app.set('view engine', 'handlebars')
 
 app.use('/',express.static('./public'))
+app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended : true }))
 app.use(routes)
+
 
 app.listen( 3000 , () => {
   console.log('now is running')

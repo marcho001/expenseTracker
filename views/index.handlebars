@@ -1,6 +1,6 @@
 
-  <div class="main-section d-flex justify-content-center m-5">
-    <div class="main-body shadow-lg rounded-lg position-relative col-lg-6"
+  <div class="main-section d-flex justify-content-center mt-5">
+    <div class="main-body shadow-lg rounded-lg position-relative col-lg-6 mb-4"
       style="min-width: 800px; min-height: 600px;">
 
       <div class="dropdown position-absolute" style="top: 30px; left: 20px;">
@@ -65,7 +65,7 @@
                   <path d="M13.293 1.207a1 1 0 011.414 0l.03.03a1 1 0 01.03 1.383L13.5 4 12 2.5l1.293-1.293z" />
                 </svg>
               </a>
-              <form action="/records/{{this._id}}/delete" method="post">
+              <form action="/records/{{this._id}}?_method=DELETE" method="post">
                 <button type="submit" class="delete border-0 text-danger" style="outline: none; cursor: pointer;">
                   <svg class="bi bi-x-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">

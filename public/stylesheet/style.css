@@ -1,20 +1,20 @@
- body {
+
+.body-container {
+  
   background-image: url('https://www.adaymag.com/wp-content/uploads/2019/05/adaymag-crayon-shin-chan-07.jpg');
+  background-size: cover; 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  background-blend-mode: screen;
+  background-color: #ffffff66;
   position: relative;
-}
-
-.body-container {
-  background: rgba(255,255,255,0.6);
-  background-size: cover;
-  position: fixed;
+  /* height: 100%; */
   top: 0px;
   right: 0px;
   left: 0px;
-  bottom: 0px;
+  bottom: 0px; 
 }
 
 .main-section .main-body {
