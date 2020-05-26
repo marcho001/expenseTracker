@@ -18,9 +18,6 @@ const Record = new Schema({
   account : {
     type: String,
     default: "現金"
-  },
-  totalAmount : {
-    type : Number
   }
 })  
 
