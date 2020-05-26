@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   Record.find()
     .lean()
     .then((record) => {
-      total = record.filter(i => i.totalAmount)[0].totalAmount
+      total = record.filter(i => i.totalAmount)[0].totalAmount || 0
       const spend = record.filter(i => !i.totalAmount)
       record.forEach((i) => {
 
@@ -67,7 +67,7 @@ router.get('/category/:item', (req, res) => {
             i.icon = '<i class="fas fa-pen h1"></i>'
             break;
         }
-        
+
         if (i.amount !== undefined) {
           categoryAmount += i.amount
         }

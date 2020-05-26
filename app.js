@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const PORT = process.env.PORT || 3000
+
 require('./config/mongoose')
 
 app.engine('handlebars', exphbs({ defaultLayout : 'main' }))
