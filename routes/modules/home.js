@@ -4,9 +4,10 @@ const Record = require('../../models/record')
 let categoryList = []
 
 router.get('/', (req, res) => {
+  const userId = req.user._id
   let totalCost = 0
   let total = 80000
-  Record.find()
+  Record.find({ userId })
   .lean()
   .then((record) => {
     record.forEach((i) => {
