@@ -43,6 +43,7 @@ router.put('/:id', (req, res) => {
 router.post('/create', (req, res) => {
   const userId = req.user._id
   const { amount, name, date, category, account } = req.body
+  
   return Record.create({
     amount,
     name,

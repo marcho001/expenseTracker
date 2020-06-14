@@ -11,7 +11,6 @@ const Record = new Schema({
   },
   date : {
     type: String,
-    default: Date.now
   },
   category : {
     type: String

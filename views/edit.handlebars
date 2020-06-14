@@ -1,27 +1,27 @@
 <div class="main-section d-flex justify-content-center ">
-  <div class="main-body d-flex justify-content-center m-5">
-    <div class="form-body shadow p-5 d-flex justify-content-center align-items-center" style="width: 1000px ">
+  <div class="main-body d-flex justify-content-center m-3 rounded">
+    <div class="form-body shadow p-5 d-flex justify-content-center align-items-center">
       <form action="/records/{{edit._id}}{{#if edit}}?_method=PUT{{/if}}{{#if create}}create{{/if}}" method="post"
         class="d-flex flex-column justify-content-around">
-        <div class="amount d-flex justify-content-between mb-5">
-          <p class="mr-3 text-danger h3 align-self-center">* 請輸入花費 :</p>
-          <input type="text" name="amount" class="rounded" style="width: 300px; height: 60px;  outline: none;"
+        <div class="amount d-flex justify-content-between mb-3">
+          <p class="mr-3 text-danger h5 align-self-center">* 請輸入花費 :</p>
+          <input type="text" name="amount" class="rounded" style=" height: 40px;  outline: none;"
             value="{{edit.amount}}">
         </div>
-        <div class="expense-title d-flex justify-content-between mb-5">
-          <p class="mr-3 text-danger h3 align-self-center">* 名稱 :</p>
+        <div class="expense-title d-flex justify-content-between mb-3">
+          <p class="mr-3 text-danger h5 align-self-center">* 名稱 :</p>
           <input type="text" name="name" class="name rounded" value="{{edit.name}}"
-            style="width: 300px; height: 60px;  outline: none;">
+            style="height: 40px;  outline: none;">
         </div>
-        <div class="date d-flex justify-content-between mb-5">
-          <p class="mr-3 h3 align-self-center">日期 :</p>
-          <input type="date" name="date" placeholder="2020-05-20" class="align-self-stretch" value="{{edit.date}}"
-            style="width: 300px; height: 60px; outline: none;">
+        <div class="date d-flex justify-content-between mb-3">
+          <p class="mr-2 h5 align-self-center">日期 :</p>
+          <input type="date" name="date" class="align-self-stretch" value="{{edit.date}}"
+            style="width: 175px; height: 40px; outline: none;">
         </div>
-        <div class="category d-flex justify-content-between mb-5">
-          <p class="mr-3 h3 align-self-center">類別 :</p>
+        <div class="category d-flex justify-content-between mb-3">
+          <p class="mr-5 h5 align-self-center">類別 :</p>
 
-          <select name="category" class="custom-select rounded" style="width: 300px; height: 60px;" placeholder="請選擇類別"
+          <select name="category" class="custom-select rounded" style="width: 175px; height: 40px;" placeholder="請選擇類別"
             value="{{edit.category}}">
             <option value="家居物業">家居物業</option>
             <option value="交通出行">交通出行</option>
@@ -30,9 +30,9 @@
             <option value="其他">其他</option>
           </select>
         </div>
-        <div class="account d-flex justify-content-between mb-5">
-          <p class="mr-3 h3 align-self-center">帳戶 :</p>
-          <select name="account" class="custom-select rounded" style="width: 300px; height: 60px;"
+        <div class="account d-flex justify-content-between mb-3">
+          <p class="mr-5 h5 align-self-center">帳戶 :</p>
+          <select name="account" class="custom-select rounded" style= "width: 175px; height: 40px;"
             value="{{edit.account}}">
             <option value="現金">現金</option>
             <option value="第一銀行">第一銀行</option>
@@ -40,13 +40,13 @@
           </select>
         </div>
         <div class="amount d-flex justify-content-center mt-5">
-          <button class="btn btn-warning mr-4 font-weight-bold h1">
-            <h1 class="font-weight-bold">
+          <button class="btn btn-warning mr-4 font-weight-bold">
+            <h4 class="font-weight-bold">
               {{#if edit }}提交{{/if}}{{#if create }}新增支出{{/if}}
-            </h1>
+            </h4>
           </button>
-          <a href="/" class="btn btn-success font-weight-bold h1">
-            <h1 class="font-weight-bold">返回</h1>
+          <a href="/" class="btn btn-success font-weight-bold">
+            <h4 class="font-weight-bold">返回</h4>
           </a>
         </div>
 
