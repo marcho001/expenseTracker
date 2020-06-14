@@ -22,17 +22,24 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.body-container .logout {
+  position: relative;
+  right: -10px;
+  top: 10px;
+}
 
 .top-section {
-  height: 200px;
+  height: 150px;
   background-image: url('https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/21751699_1666018860097329_1147432509306499794_n.jpg?_nc_cat=106&_nc_sid=730e14&_nc_oc=AQnBNA7sEAU8IEEuhGtJXNopGq86tLt651XZrOli22Mh-cJy_yHn9d0ecNN66Ck4Jxw&_nc_ht=scontent-tpe1-1.xx&oh=b17b388ffc450d884e1681f3fd1c159f&oe=5F07741F');
   box-shadow: 10px 5px 30px black;
 }
 
 .title h1{
   letter-spacing: 35px;
-  color: rgb(42, 40, 49);
+  color: rgb(46, 42, 59);
+  min-width: 700px;
 }
+
 
 
 .main-section .main-body {

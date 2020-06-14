@@ -13,14 +13,14 @@
 <body>
   <div class="body-container pt-0">
     <div class="top-section d-flex justify-content-center ">
-      <div class="title d-flex justify-content-center align-items-center" style="min-width: 600px;">
-        <h1 class="display-1 align-self-center font-weight-bold">廣志の私帳</h1>
+      <div class="title d-flex align-items-center" style="min-width: 600px;">
+        <h1 class="display-1 text-center font-weight-bold">廣志の私帳</h1>
       </div>
     </div>
     {{#if isAuthenticated}}
-    <a href="/users/logout" class="btn btn-outline-primary">Logout</a>
+    <a href="/users/logout" class="logout btn btn-warning">Logout</a>
     {{else}}
-    <a href="/users/login" class="btn btn-outline-light">Login</a>
+    <a href="/users/login" class="logout btn btn-warning">Login</a>
     {{/if}}
   {{{body}}}
     </div>

@@ -10,7 +10,8 @@ const Record = new Schema({
     require: true
   },
   date : {
-    type: String
+    type: String,
+    default: Date.now
   },
   category : {
     type: String
