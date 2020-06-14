@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
+const Category = require('../../models/category')
 let categoryList = []
+let month = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
 
 router.get('/', (req, res) => {
   const userId = req.user._id
@@ -36,19 +38,33 @@ router.get('/', (req, res) => {
               })
               
               total -= totalCost
-              res.render('index', { cost : record, total, totalCost, categoryList })
+              console.log(record)
+              res.render('index', { cost : record, total, totalCost, categoryList ,month})
               
             })
             .catch(err => console.log('//err'))
           })
-          
-router.get('/category/:item', (req, res) => {
-  Record.find({ "category": `${req.params.item}` })
+
+router.post('/filter', (req, res) => {
+  const userId = req.user._id
+  const { category, month } = req.body
+  Record.find({ userId })
     .lean()
     .then((record) => {
+      let cost
       let categoryAmount = 0
-      record.forEach((i) => {
-
+      if (category && month) {
+        cost = record.filter(item => {
+          return item.category === category && item.month === month
+        })
+      } else if (category && !month) {
+        cost = record.filter(item => item.category === category)
+      } else if (month && !category) {
+        cost = record.filter(item => item.month === month)
+      } else if (!category && !month) {
+        return res.redirect('/')
+      }
+      cost.forEach((i) => {
         switch (i.category) {
           case "家居物業":
             i.icon = '<i class="fas fa-home h1"></i>'
@@ -66,15 +82,15 @@ router.get('/category/:item', (req, res) => {
             i.icon = '<i class="fas fa-pen h1"></i>'
             break;
         }
-
-          categoryAmount += i.amount
+        categoryAmount += i.amount
       })
-
-      res.render('index', { cost: record, totalCost : categoryAmount, categoryList ,categoryAmount})
+      
+      console.log(cost)
+      res.render('index', { cost, totalCost: categoryAmount, categoryList, categoryAmount, month })
     })
-    .catch(err => console.log('err'))
-
-
+    .catch(err => console.log(err))
 })
+          
+
 
 module.exports = router

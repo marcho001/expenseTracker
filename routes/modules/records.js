@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
+const Category = require('../../models/category')
 
 
 router.get('/:id/edit', (req, res) => {
@@ -58,11 +59,43 @@ router.post('/create', (req, res) => {
   const { amount, name, category, merchant,
     description, account } = req.body
   let date = req.body.date
+  let month = date[5] + date[6]
+  // Category.find({ category })
+  //   .lean()
+  //   .then(isExist => {
+  //     if (!isExist) {
+  //       let icon = ''
+  //       switch (category) {
+  //         case "家居物業":
+  //           icon = '<i class="fas fa-home h1"></i>'
+  //           break;
+  //         case "交通出行":
+  //           icon = '<i class="fas fa-shuttle-van h1"></i> '
+  //           break;
+  //         case "休閒娛樂":
+  //           icon = '<i class="fas fa-grin-beam h1"></i>'
+  //           break;
+  //         case "餐飲食品":
+  //           icon = '<i class="fas fa-utensils h1"></i>'
+  //           break;
+  //         case "其他":
+  //           icon = '<i class="fas fa-pen h1"></i>'
+  //           break;
+  //       }
+  //       console.log(category, icon)
+  //       return Category.create({ category ,icon})
+  //         .then(i => console.log(i))
+  //     }
+  //   })
   if (!date) {
-    let timeNow = new Date()
-    date = timeNow.toLocaleDateString()
+    const timeNow = new Date()
+    const YYYY = timeNow.getFullYear()
+    const MM = (timeNow.getMonth() + 1).toString()
+    const DD = (timeNow.getDate()).toString()
+    date = `${YYYY}-${MM.padStart(2, '0')}-${DD.padStart(2,'0')}`
+    month = MM
   }
-  if ( !amount || !name || typeof amount === String ){
+  if ( typeof amount === String || !amount || !name ){
     let isCreatePage = true
     let errors = [{message: '輸入格式錯誤！'}]
     return res.render('edit',{ 
@@ -84,9 +117,41 @@ router.post('/create', (req, res) => {
     account,
     merchant,
     description,
+    month,
     userId
   })
-    .then(() => res.redirect('/'))
+    .then(record => {
+      const category = record.category
+      let icon = ''
+        switch (category) {
+          case "家居物業":
+            icon = '<i class="fas fa-home h1"></i>'
+            break;
+          case "交通出行":
+            icon = '<i class="fas fa-shuttle-van h1"></i> '
+            break;
+          case "休閒娛樂":
+            icon = '<i class="fas fa-grin-beam h1"></i>'
+            break;
+          case "餐飲食品":
+            icon = '<i class="fas fa-utensils h1"></i>'
+            break;
+          case "其他":
+            icon = '<i class="fas fa-pen h1"></i>'
+            break;
+        }
+        console.log(category, icon)
+      Category.create({ category, icon, userId })
+        .then(() => res.redirect('/'))
+        .catch(err => {
+          Category.find({ category })
+            .lean()
+            .then((isExist) => {
+              if (isExist) return res.redirect('/')
+              console.log(err)
+            })
+        })
+    })
     .catch(err => console.log('err'))
 })
 

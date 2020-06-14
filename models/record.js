@@ -10,7 +10,10 @@ const Record = new Schema({
     required: true
   },
   date : {
-    type: String,
+    type: String
+  },
+  month: {
+    type: String
   },
   category : {
     type: String
