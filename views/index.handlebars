@@ -1,7 +1,7 @@
 
-  <div class="main-section d-flex justify-content-center mt-5">
-    <div class="main-body shadow-lg rounded-lg position-relative col-lg-6 "
-      style="min-width: 800px; min-height: 600px;">
+  <div class="main-section d-flex justify-content-center mt-3 mb-5">
+    <div class="main-body shadow-lg rounded-lg position-relative col-8 col-lg-5 "
+      style="min-width: 500px;">
 
       <div class="dropdown position-absolute" style="top: 30px; left: 20px;">
         <button class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -32,15 +32,15 @@
       <div class="wrapper col-10 m-auto">
         <ul class="list-group list-group-flush">
           {{#each cost}}
-          <li class="list-group-item d-flex" style="min-width: 500px;">
+          <li class="list-group-item d-flex" style="min-width: 300px;">
             <a href="#" class="text-dark d-flex justify-content-between col-10 " style="text-decoration: none;">
 
               <div class="list-left d-flex align-items-center ">
-                <div class="category-icon mr-4">
+                <div class="category-icon mr-2">
                   {{{this.icon}}}
                   </div>
                 <div class="detail m-2">
-                  <h1 class="title">{{this.name}}</h1>
+                  <h4 class="title">{{this.name}}</h4>
                   <span class="date">{{this.date}}</span>
                 </div>
               </div>
@@ -52,7 +52,7 @@
                 </div>
               </div>
             </a>
-            <div class="button d-flex flex-column align-items-center justify-content-around ml-5">
+            <div class="button d-flex flex-column align-items-center justify-content-around ml-2">
               <a href="/records/{{this._id}}/edit" class="edit text-success">
                 <svg class="bi bi-pen" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg">
@@ -86,9 +86,9 @@
           {{/each}}
         </ul>
       </div>
-      <div class="button d-flex justify-content-center mt-5">
-        <a href="/records/create" class="btn btn-warning p-2 mb-5">
-          <h2>新增支出</h2>
+      <div class="button d-flex justify-content-center mt-3">
+        <a href="/records/create" class="btn btn-warning p-2 mb-3">
+          <h4>新增支出</h4>
 
         </a>
       </div>
