@@ -9,13 +9,15 @@ router.get('/:id/edit', (req, res) => {
   return Record.findOne({ _id, userId })
     .lean()
     .then(edit => {
-      const { name, amount, date, category, account } = edit
+      const { name, amount, date, category, merchant, description, account } = edit
       res.render('edit', { 
         edit,
         name,
         amount,
         date,
         category,
+        merchant,
+        description,
         account
       })
     })
@@ -53,7 +55,8 @@ router.put('/:id', (req, res) => {
 
 router.post('/create', (req, res) => {
   const userId = req.user._id
-  const { amount, name, category, account } = req.body
+  const { amount, name, category, merchant,
+    description, account } = req.body
   let date = req.body.date
   if (!date) {
     let timeNow = new Date()
@@ -67,6 +70,8 @@ router.post('/create', (req, res) => {
       create: isCreatePage,
       name,
       category,
+      merchant,
+      description,
       account,
       date
     })
@@ -77,6 +82,8 @@ router.post('/create', (req, res) => {
     date,
     category,
     account,
+    merchant,
+    description,
     userId
   })
     .then(() => res.redirect('/'))

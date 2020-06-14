@@ -14,6 +14,11 @@
           <input type="text" name="name" class="name rounded" placeholder="請輸入花費名稱" value="{{name}}"
             style="height: 40px;  outline: none;">
         </div>
+        <div class="d-flex justify-content-between mb-3">
+          <p class="mr-3 h5 align-self-center"> 商家 :</p>
+          <input type="text" name="merchant" class="name rounded" placeholder="請輸入商家名稱" value="{{merchant}}"
+            style="height: 40px;  outline: none;">
+        </div>
         <div class="date d-flex justify-content-between mb-3">
           <p class="mr-2 h5 align-self-center">日期 :</p>
           <input type="date" name="date" class="align-self-stretch" value="{{date}}"
@@ -39,6 +44,11 @@
             <option value="第一銀行">第一銀行</option>
             <option value="第二銀行">第二銀行</option>
           </select>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <p class="mr-3 text-danger h5 align-self-center">描述 :</p>
+          <textarea type="text" name="description" class="name rounded" placeholder="請輸入花費描述" value="{{description}}"
+            style="height: 100px;  outline: none;"></textarea>
         </div>
         <div class="amount d-flex justify-content-center mt-5">
           <button class="btn btn-warning mr-4 font-weight-bold">

@@ -19,6 +19,12 @@ const Record = new Schema({
     type: String,
     default: "現金"
   },
+  merchant: {
+    type: String
+  },
+  description: {
+    type: String
+  },
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
