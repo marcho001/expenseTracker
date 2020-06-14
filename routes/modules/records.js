@@ -60,33 +60,7 @@ router.post('/create', (req, res) => {
     description, account } = req.body
   let date = req.body.date
   let month = date[5] + date[6]
-  // Category.find({ category })
-  //   .lean()
-  //   .then(isExist => {
-  //     if (!isExist) {
-  //       let icon = ''
-  //       switch (category) {
-  //         case "家居物業":
-  //           icon = '<i class="fas fa-home h1"></i>'
-  //           break;
-  //         case "交通出行":
-  //           icon = '<i class="fas fa-shuttle-van h1"></i> '
-  //           break;
-  //         case "休閒娛樂":
-  //           icon = '<i class="fas fa-grin-beam h1"></i>'
-  //           break;
-  //         case "餐飲食品":
-  //           icon = '<i class="fas fa-utensils h1"></i>'
-  //           break;
-  //         case "其他":
-  //           icon = '<i class="fas fa-pen h1"></i>'
-  //           break;
-  //       }
-  //       console.log(category, icon)
-  //       return Category.create({ category ,icon})
-  //         .then(i => console.log(i))
-  //     }
-  //   })
+
   if (!date) {
     const timeNow = new Date()
     const YYYY = timeNow.getFullYear()
