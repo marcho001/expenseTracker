@@ -3,11 +3,11 @@ const Schema = mongoose.Schema
 const Record = new Schema({
   amount : {
     type: Number,
-    require: true,
+    required: true,
   },
   name : {
     type: String,
-    require: true
+    required: true
   },
   date : {
     type: String,

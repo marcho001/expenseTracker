@@ -8,7 +8,18 @@ router.get('/:id/edit', (req, res) => {
   const _id = req.params.id
   return Record.findOne({ _id, userId })
     .lean()
-    .then(edit => res.render('edit', { edit }))
+    .then(edit => {
+      const { name, amount, date, category, account } = edit
+      res.render('edit', { 
+        edit,
+        name,
+        amount,
+        date,
+        category,
+        account
+      })
+    })
+      
     .catch(err => console.log('err'))
 })
 
@@ -42,8 +53,24 @@ router.put('/:id', (req, res) => {
 
 router.post('/create', (req, res) => {
   const userId = req.user._id
-  const { amount, name, date, category, account } = req.body
-  
+  const { amount, name, category, account } = req.body
+  let date = req.body.date
+  if (!date) {
+    let timeNow = new Date()
+    date = timeNow.toLocaleDateString()
+  }
+  if ( !amount || !name || typeof amount === String ){
+    let isCreatePage = true
+    let errors = [{message: '輸入格式錯誤！'}]
+    return res.render('edit',{ 
+      errors,
+      create: isCreatePage,
+      name,
+      category,
+      account,
+      date
+    })
+  }
   return Record.create({
     amount,
     name,
